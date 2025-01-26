@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -15,50 +16,54 @@ body {
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 0 0% 98%;  
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
+    --accent: 208 98% 25%;
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-foreground);  /* Ensure headings use primary foreground color */
+  }
+
+  p {
+    color: var(--muted-foreground);  /* Apply muted text color */
+  }
+
+  /* Custom utility classes for primary, secondary, and muted text colors */
+  .text-primary {
+    color: var(--primary-foreground);
+  }
+
+  .text-muted {
+    color: var(--muted-foreground);
+  }
+
+  .text-destructive {
+    color: var(--destructive-foreground);
+  }
+
+  .text-secondary {
+    color: var(--secondary-foreground);
+  }
+}
+
+@layer utilities {
+  .text-primary-foreground {
+    color: var(--primary-foreground);  /* Tailwind utility for primary text color */
+  }
+
+  .text-muted-foreground {
+    color: var(--muted-foreground); /* Tailwind utility for muted text color */
   }
 }
 
@@ -69,4 +74,156 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+ }
+ 
+ 
+ /* Global CSS for Header */
+ 
+ 
+ header {
+  display: flex;
+  align-items: center;
+  font-family: "Times New Roman", Times, serif;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd; /* Light border at the bottom */
+  background-color:  #022c5e; /* Background color */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+ }
+ 
+ 
+ header .logo {
+  margin-right: auto; /* Pushes the logo to the left */
+ }
+ 
+ 
+ header .title {
+  font-family: "Times New Roman", Times, serif; /* Change to desired font */
+  font-size: 2rem; /* Adjust size */
+  color: #fff; /* White to contrast the background */
+  text-align: center;
+  flex-grow: 1; /* Ensures it's centered */
 }
+
+ 
+ 
+ header .placeholder {
+  width: 150px; /* Placeholder width to balance the layout */
+ }
+ 
+ 
+ /* Styling for Subheader */
+ .subheader {
+  text-align: center; /* Center the content */
+  padding: 20px 40px; /* Add spacing around the section */
+  background-color: var(--background); /* Use the same background color */
+ }
+ 
+ 
+ .subheader-title {
+  font-size: 1.8rem; /* Slightly larger than TAXAIMIZER */
+  font-weight: 400;
+  font-family: "Times New Roman", Times, serif;
+  color: #034f90; /* Deep blue to match the TAXAIMIZER style */
+ }
+ 
+ 
+ .subheader-subtitle {
+  font-size: 1rem; /* Smaller subtitle text */
+  color: #666; /* Gray for a softer look */
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 8px; /* Add space between title and subtitle */
+ }
+ 
+ 
+ /* Styling for the Horizontal Line */
+ .header-line {
+  margin-top: 16px; /* Adjust spacing above the line */
+  border: none; /* Remove default border */
+  height: 1px; /* Change the thickness of the line */
+  background-color: #000000; /* Dark color (black) */
+  width: 90%; /* Adjust the width of the line */
+  margin-left: auto; /* Center the line */
+  margin-right: auto; /* Center the line */
+ }
+ 
+ /* Styles for the Submit Button */
+/* Styles for the Submit Button */
+.submit-btn {
+  background-color: #022c5e; /* Match header title color */
+  color: #ffffff; /* Keep the text color white */
+  padding: 10px 20px; /* Padding around the button */
+  font-size: 1rem; /* Standard font size */
+  border: none; /* Remove default border */
+  border-radius: var(--radius); /* Use global border radius */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center; /* Center text inside button */
+  display: block; /* Make it block-level for centering */
+  margin: 20px auto; /* Center the button horizontally */
+}
+
+/* Submit Button Hover State */
+.submit-btn:hover {
+  background-color: #022b5e5f; /* A darker shade for hover effect */
+  color: var(--primary-foreground); /* Keep text color consistent */
+}
+
+/* For Results Page */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+}
+
+.text-blue {
+  color: #1e3a8a; /* Tailwind's blue-900 */
+}
+
+.text-highlight {
+  color: #2563eb; /* Tailwind's blue-600 */
+}
+
+.card {
+  border: 1px solid #e5e7eb; /* Tailwind's gray-300 */
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+  padding: 1rem; /* Tailwind's p-4 */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Tailwind's shadow-sm */
+  background-color: #fff;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Tailwind's mb-4 */
+}
+
+.card-header .icon {
+  background-color: #bfdbfe; /* Tailwind's blue-100 */
+  color: #2563eb; /* Tailwind's blue-500 */
+  padding: 0.5rem; /* Tailwind's p-2 */
+  border-radius: 9999px; /* Tailwind's rounded-full */
+}
+
+.card-title {
+  font-size: 1.25rem; /* Tailwind's text-xl */
+  font-weight: 700; /* Tailwind's font-bold */
+  margin-left: 0.75rem; /* Tailwind's ml-3 */
+}
+
+.list {
+  list-style-type: disc;
+  list-style-position: inside;
+  color: #4b5563; /* Tailwind's gray-700 */
+}
+
+.potential-savings {
+  text-align: right;
+  font-weight: 700;
+  color: #022c5e; /* Tailwind's blue-600 */
+  font-size: 1.125rem; /* Tailwind's text-lg */
+  margin-top: 1rem; /* Tailwind's mt-4 */
+}
+
+
