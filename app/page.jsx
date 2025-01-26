@@ -167,15 +167,6 @@ export default function Home() {
         className="mr-2 accent-[#022c5e]"
       />
       Married Filing Jointly
-      </label>
-    <label className="flex items-center">
-      <input
-        type="radio"
-        name="filingStatus"
-        value="MarriedFilingSeparately"
-        className="mr-2 accent-[#022c5e]"
-      />
-      Married Filing Separately
     </label>
     <label className="flex items-center">
       <input
@@ -218,621 +209,804 @@ export default function Home() {
           </label>
         </div>
 
-        {/* -------------------------------------- */}
         {/* Section 2: Employment and Income */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">
-            Section 2: Employment and Income
-          </h2>
-          <h3 className="text-l text-accent">Primary Source of Income</h3>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 2: Employment and Income</h2>
 
-          <label className="flex items-center space-x-2">
-            <Checkbox />
-            <span>W-2 Employee</span>
-          </label>
+  {/* Primary Source of Income */}
+  <h3 className="text-l text-accent">Primary Source of Income</h3>
+  <label className="flex items-center space-x-2">
+    <Checkbox />
+    <span>W-2 Employee</span>
+  </label>
+  <label className="flex items-center space-x-2">
+    <Checkbox />
+    <span>Self-Employed</span>
+  </label>
+  <label className="flex items-center space-x-2">
+    <Checkbox />
+    <span>Freelance/Contractor (1099 Income)</span>
+  </label>
+  <label className="flex items-center space-x-2">
+    <Checkbox />
+    <span>Rental Property Income</span>
+  </label>
+  <label className="flex items-center space-x-2">
+    <Checkbox />
+    <span>Investment/Capital Gains</span>
+  </label>
+  <label className="flex items-center space-x-2 mb-4">
+    <Checkbox />
+    <input
+      type="text"
+      name="other"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Other (please specify)"
+    />
+  </label>
 
-          <label className="flex items-center space-x-2">
-            <Checkbox />
-            <span>Self-Employed</span>
-          </label>
+  {/* Annual Income */}
+  <h3 className="text-l text-accent">Annual Income (approximate):</h3>
+  <input
+    type="text"
+    name="annualIncome"
+    className="w-full p-3 mt-2 border rounded-md"
+    placeholder="$"
+  />
 
-          <label className="flex items-center space-x-2">
-            <Checkbox />
-            <span>Freelance/Contractor (1099 Income)</span>
-          </label>
+  {/* Side Income or Gig Work */}
+  <h3 className="text-l text-accent">Side Income or Gig Work?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="sideIncome"
+        value="Yes"
+        className="accent-[#022c5e]" // Matches theme color
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="sideIncome"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="flex items-center space-x-2">
-            <Checkbox />
-            <span>Rental Property Income</span>
-          </label>
+  {/* Side Income Details */}
+  <label className="flex flex-col space-y-2 ml-6 mt-4">
+    <h3 className="text-l text-accent">If yes, describe:</h3>
+    <input
+      type="text"
+      name="sideWorkDescription"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Describe Side Income or Gig Work"
+    />
+  </label>
+</div>
 
-          <label className="flex items-center space-x-2">
-            <Checkbox />
-            <span>Investment/Capital Gains</span>
-          </label>
 
-          <label className="flex items-center space-x-2 mb-4">
-            <Checkbox />
-            <input
-              type="text"
-              name="other"
-              className="w-full p-3 mt-2 border rounded-md"
-              placeholder="Other income source"
-            />
-          </label>
-
-          <h3 className="text-l text-accent">Annual Income (approximate): </h3>
-          <input
-            type="text"
-            name="annualIncome"
-            className="w-full p-3 mt-2 border rounded-md"
-          />
-
-          <h3 className="text-l text-accent">Side Income or Gig Work?</h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="sideIncomeYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="sideIncomeNo" />
-              <span>No</span>
-            </label>
-          </div>
-
-          <label className="flex flex-col space-y-2 ml-6 mt-4">
-            <h3 className="text-l text-accent">If yes, describe:</h3>
-            <input
-              type="text"
-              name="sideIncomeDescription"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
-        </div>
-
-        {/* -------------------------------------- */}
         {/* Section 3: Homeownership and Real Estate */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">
-            Section 3: Homeownership and Real Estate
-          </h2>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 3: Homeownership and Real Estate</h2>
 
-          <h3 className="text-l text-accent">Do you own a home?</h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="ownHome" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="dontOwnHome" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Do you own a home? */}
+  <h3 className="text-l text-accent">Do you own a home?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="ownHome"
+        value="Yes"
+        className="accent-[#022c5e]" // Matches theme
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="ownHome"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <div className="ml-6 mt-4">
-            <label className="block">
-              <span className="text-l text-accent">
-                If yes, what was your mortgage interest paid last year? $
-              </span>
-              <input
-                type="text"
-                name="mortgageInterest"
-                className="w-full p-3 mt-2 border rounded-md"
-              />
-            </label>
-          </div>
+  {/* Mortgage Interest Section */}
+  <div className="ml-6 mt-4">
+    <label className="block">
+      <span className="text-l text-accent">If yes, what was your mortgage interest paid last year? $</span>
+      <input
+        type="text"
+        name="mortgageInterest"
+        className="w-full p-3 mt-2 border rounded-md"
+        placeholder="Enter amount"
+      />
+    </label>
+  </div>
 
-          <div className="ml-6 mt-4">
-            <label className="block">
-              <span className="text-l text-accent">Property taxes paid: $</span>
-              <input
-                type="text"
-                name="propertyTaxes"
-                className="w-full p-3 mt-2 border rounded-md"
-              />
-            </label>
-          </div>
+  {/* Property Taxes Section */}
+  <div className="ml-6 mt-4">
+    <label className="block">
+      <span className="text-l text-accent">Property taxes paid: $</span>
+      <input
+        type="text"
+        name="propertyTaxes"
+        className="w-full p-3 mt-2 border rounded-md"
+        placeholder="Enter amount"
+      />
+    </label>
+  </div>
 
-          <div className="ml-6 mt-4">
-            <label className="block">
-              <span className="text-l text-accent">
-                Energy-efficient home improvements made:
-              </span>
-              <input
-                type="text"
-                name="homeImprovements"
-                className="w-full p-3 mt-2 border rounded-md"
-              />
-            </label>
-          </div>
+  {/* Energy-Efficient Home Improvements Section */}
+  <div className="ml-6 mt-4">
+    <label className="block">
+      <span className="text-l text-accent">
+        Energy-efficient home improvements made (e.g., solar panels, insulation):
+      </span>
+      <input
+        type="text"
+        name="homeImprovements"
+        className="w-full p-3 mt-2 border rounded-md"
+        placeholder="Describe improvements"
+      />
+    </label>
+  </div>
 
-          <h3 className="text-l text-accent mt-6">Do you own rental properties?</h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="ownRental" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="noRental" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Do you own rental properties? */}
+  <h3 className="text-l text-accent mt-6">Do you own rental properties?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="ownRentalProperties"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="ownRentalProperties"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <div className="ml-6 mt-4">
-            <label className="block">
-              <span className="text-l text-accent">
-                If yes, provide total expenses (repairs, maintenance, etc.): $
-              </span>
-              <input
-                type="text"
-                name="rentalExpenses"
-                className="w-full p-3 mt-2 border rounded-md"
-              />
-            </label>
-          </div>
-        </div>
+  {/* Rental Property Expenses Section */}
+  <div className="ml-6 mt-4">
+    <label className="block">
+      <span className="text-l text-accent">
+        If yes, provide total expenses (repairs, maintenance, etc.): $
+      </span>
+      <input
+        type="text"
+        name="rentalExpenses"
+        className="w-full p-3 mt-2 border rounded-md"
+        placeholder="Enter amount"
+      />
+    </label>
+  </div>
+</div>
 
-        {/* -------------------------------------- */}
+
         {/* Section 4: Medical and Health Expenses */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">
-            Section 4: Medical and Health Expenses
-          </h2>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 4: Medical and Health Expenses</h2>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              Total out-of-pocket medical expenses (including premiums):
-            </span>
-            <input
-              type="text"
-              name="medicalExpenses"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Total Out-of-Pocket Medical Expenses */}
+  <label className="block">
+    <span className="text-l text-accent">
+      Total out-of-pocket medical expenses (including premiums):
+    </span>
+    <input
+      type="text"
+      name="medicalExpenses"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter total expenses"
+    />
+  </label>
 
-          <h3 className="text-l text-accent">
-            Did you contribute to an HSA (Health Savings Account)?
-          </h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="hsaYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="hsaNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* HSA Contribution Question */}
+  <h3 className="text-l text-accent">Did you contribute to an HSA (Health Savings Account)?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="hsaContribution"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="hsaContribution"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <div className="ml-6 mt-4">
-            <label className="block">
-              <span className="text-l text-accent">If yes, how much? $</span>
-              <input
-                type="text"
-                name="hsaContribution"
-                className="w-full p-3 mt-2 border rounded-md"
-              />
-            </label>
-          </div>
-        </div>
+  {/* HSA Contribution Amount */}
+  <div className="ml-6 mt-4">
+    <label className="block">
+      <span className="text-l text-accent">If yes, how much? $</span>
+      <input
+        type="text"
+        name="hsaContributionAmount"
+        className="w-full p-3 mt-2 border rounded-md"
+        placeholder="Enter contribution amount"
+      />
+    </label>
+  </div>
+</div>
 
-        {/* -------------------------------------- */}
+
         {/* Section 5: Education */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">
-            Section 5: Education
-          </h2>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 5: Education</h2>
 
-          <h3 className="text-l text-accent">
-            Did you or a dependent pay for tuition or education expenses?
-          </h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="eduYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="eduNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Tuition or Education Expenses */}
+  <h3 className="text-l text-accent">Did you or a dependent pay for tuition or education expenses?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="educationExpenses"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="educationExpenses"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <div className="ml-6 mt-4 space-y-4">
-            <label className="block">
-              <span className="text-l text-accent">If yes, provide total paid:</span>
-              <input
-                type="text"
-                name="tuitionPaid"
-                className="w-full p-3 mt-2 border rounded-md"
-              />
-            </label>
+  {/* Total Paid for Tuition */}
+  <div className="ml-6 mt-4">
+    <label className="block">
+      <span className="text-l text-accent">If yes, provide total paid:</span>
+      <input
+        type="text"
+        name="tuitionPaid"
+        className="w-full p-3 mt-2 border rounded-md"
+        placeholder="Enter amount paid"
+      />
+    </label>
+  </div>
 
-            <label className="block">
-              <span className="text-l text-accent">
-                Were 529 plan contributions made?
-              </span>
-              <div className="flex items-center space-x-2">
-                <label className="flex items-center space-x-2">
-                  <Checkbox name="plan529Yes" />
-                  <span>Yes</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <Checkbox name="plan529No" />
-                  <span>No</span>
-                </label>
-              </div>
-            </label>
+  {/* 529 Plan Contributions */}
+  <div className="ml-6 mt-4 space-y-4">
+    <label className="block">
+      <span className="text-l text-accent">Were 529 plan contributions made?</span>
+      <div className="flex items-center space-x-4 mt-2">
+        <label className="flex items-center space-x-2">
+          <input
+            type="radio"
+            name="planContributions"
+            value="Yes"
+            className="accent-[#022c5e]"
+          />
+          <span>Yes</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="radio"
+            name="planContributions"
+            value="No"
+            className="accent-[#022c5e]"
+          />
+          <span>No</span>
+        </label>
+      </div>
+    </label>
 
-            <label className="block">
-              <span className="text-l text-accent">Amount contributed:</span>
-              <input
-                type="text"
-                name="amountContributed"
-                className="w-full p-3 mt-2 border rounded-md"
-              />
-            </label>
-          </div>
-        </div>
+    {/* Amount Contributed */}
+    <label className="block">
+      <span className="text-l text-accent">Amount contributed:</span>
+      <input
+        type="text"
+        name="amountContributed"
+        className="w-full p-3 mt-2 border rounded-md"
+        placeholder="Enter amount contributed"
+      />
+    </label>
+  </div>
+</div>
 
-        {/* -------------------------------------- */}
+
         {/* Section 6: Retirement Contributions */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">
-            Section 6: Retirement Contributions
-          </h2>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 6: Retirement Contributions</h2>
 
-          <h3 className="text-l text-accent">
-            Did you contribute to a retirement account (401(k), IRA, Roth IRA)?
-          </h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="retirementYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="retirementNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Contribute to a Retirement Account */}
+  <h3 className="text-l text-accent">Did you contribute to a retirement account (401(k), IRA, Roth IRA)?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="retirementContribution"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="retirementContribution"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              If yes, provide contribution details:
-            </span>
-            <input
-              type="text"
-              name="retirementContributionDetails"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Contribution Details */}
+  <label className="block">
+    <span className="text-l text-accent">If yes, provide contribution details:</span>
+    <input
+      type="text"
+      name="retirementContributionDetails"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="e.g., $22,500 to 401(k)"
+    />
+  </label>
 
-          <h3 className="text-l text-accent">Did your employer offer a match?</h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="matchYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="matchNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Employer Offer Match */}
+  <h3 className="text-l text-accent">Did your employer offer a match?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="employerMatch"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="employerMatch"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              If yes, did you contribute enough to receive the full match?
-            </span>
-            <div className="flex items-center space-x-2">
-              <label className="flex items-center space-x-2">
-                <Checkbox name="fullMatchYes" />
-                <span>Yes</span>
-              </label>
-              <label className="flex items-center space-x-2">
-                <Checkbox name="fullMatchNo" />
-                <span>No</span>
-              </label>
-            </div>
-          </label>
-        </div>
+  {/* Full Match Contribution */}
+  <label className="block">
+    <span className="text-l text-accent">If yes, did you contribute enough to receive the full match?</span>
+    <div className="flex items-center space-x-4 mt-2">
+      <label className="flex items-center space-x-2">
+        <input
+          type="radio"
+          name="fullMatch"
+          value="Yes"
+          className="accent-[#022c5e]"
+        />
+        <span>Yes</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input
+          type="radio"
+          name="fullMatch"
+          value="No"
+          className="accent-[#022c5e]"
+        />
+        <span>No</span>
+      </label>
+    </div>
+  </label>
+</div>
 
-        {/* -------------------------------------- */}
+
         {/* Section 7: Charitable Contributions */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">
-            Section 7: Charitable Contributions
-          </h2>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 7: Charitable Contributions</h2>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              Total charitable donations made (cash, goods, or services):
-            </span>
-            <input
-              type="text"
-              name="charitableDonations"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Total Charitable Donations */}
+  <label className="block">
+    <span className="text-l text-accent">
+      Total charitable donations made (cash, goods, or services):
+    </span>
+    <input
+      type="text"
+      name="charitableDonations"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter total donations"
+    />
+  </label>
 
-          <label className="block">
-            <span className="text-l text-accent">Non-cash donations?</span>
-            <div className="flex items-center space-x-2">
-              <label className="flex items-center space-x-2">
-                <Checkbox name="nonCashYes" />
-                <span>Yes</span>
-              </label>
-              <label className="flex items-center space-x-2">
-                <Checkbox name="nonCashNo" />
-                <span>No</span>
-              </label>
-            </div>
-          </label>
+  {/* Non-Cash Donations */}
+  <label className="block">
+    <span className="text-l text-accent">Non-cash donations (e.g., clothing, furniture)?</span>
+    <div className="flex items-center space-x-4 mt-2">
+      <label className="flex items-center space-x-2">
+        <input
+          type="radio"
+          name="nonCashDonations"
+          value="Yes"
+          className="accent-[#022c5e]"
+        />
+        <span>Yes</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input
+          type="radio"
+          name="nonCashDonations"
+          value="No"
+          className="accent-[#022c5e]"
+        />
+        <span>No</span>
+      </label>
+    </div>
+  </label>
 
-          <label className="block">
-            <span className="text-l text-accent">Estimated value:</span>
-            <input
-              type="text"
-              name="nonCashValue"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Estimated Value of Non-Cash Donations */}
+  <label className="block">
+    <span className="text-l text-accent">Estimated value:</span>
+    <input
+      type="text"
+      name="nonCashValue"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter estimated value"
+    />
+  </label>
 
-          <label className="block">
-            <span className="text-l text-accent">Did you volunteer?</span>
-            <div className="flex items-center space-x-2">
-              <label className="flex items-center space-x-2">
-                <Checkbox name="volunteerYes" />
-                <span>Yes</span>
-              </label>
-              <label className="flex items-center space-x-2">
-                <Checkbox name="volunteerNo" />
-                <span>No</span>
-              </label>
-            </div>
-          </label>
+  {/* Volunteer Work */}
+  <label className="block">
+    <span className="text-l text-accent">Did you volunteer?</span>
+    <div className="flex items-center space-x-4 mt-2">
+      <label className="flex items-center space-x-2">
+        <input
+          type="radio"
+          name="volunteerWork"
+          value="Yes"
+          className="accent-[#022c5e]"
+        />
+        <span>Yes</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input
+          type="radio"
+          name="volunteerWork"
+          value="No"
+          className="accent-[#022c5e]"
+        />
+        <span>No</span>
+      </label>
+    </div>
+  </label>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              If yes, provide mileage or related expenses:
-            </span>
-            <input
-              type="text"
-              name="volunteerExpenses"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
-        </div>
+  {/* Volunteer Mileage or Related Expenses */}
+  <label className="block">
+    <span className="text-l text-accent">If yes, provide mileage or related expenses:</span>
+    <input
+      type="text"
+      name="volunteerExpenses"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter mileage or expenses"
+    />
+  </label>
+</div>
 
-        {/* -------------------------------------- */}
+
         {/* Section 8: Work-Related Expenses */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">
-            Section 8: Work-Related Expenses
-          </h2>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 8: Work-Related Expenses</h2>
 
-          <h3 className="text-l text-accent">
-            Did you have unreimbursed work expenses?
-          </h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="workExpYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="workExpNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Unreimbursed Work Expenses */}
+  <h3 className="text-l text-accent">Did you have unreimbursed work expenses?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="unreimbursedExpenses"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="unreimbursedExpenses"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              If yes, describe (e.g., travel, supplies, etc.):
-            </span>
-            <input
-              type="text"
-              name="workExpensesDescription"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Work Expenses Description */}
+  <label className="block">
+    <span className="text-l text-accent">If yes, describe (e.g., travel, supplies, etc.):</span>
+    <input
+      type="text"
+      name="workExpensesDescription"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Describe expenses"
+    />
+  </label>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              Total work-related expenses:
-            </span>
-            <input
-              type="text"
-              name="workExpensesTotal"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Total Work Expenses */}
+  <label className="block">
+    <span className="text-l text-accent">Total work-related expenses:</span>
+    <input
+      type="text"
+      name="workExpensesTotal"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter total amount"
+    />
+  </label>
 
-          <h3 className="text-l text-accent">
-            Did you use a portion of your home for work?
-          </h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="homeOfficeYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="homeOfficeNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Home Used for Work */}
+  <h3 className="text-l text-accent">Did you use a portion of your home for work?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="homeForWork"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="homeForWork"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">Square footage of home:</span>
-            <input
-              type="text"
-              name="homeSquareFootage"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Home Office Details */}
+  <label className="block">
+    <span className="text-l text-accent">Square footage of home:</span>
+    <input
+      type="text"
+      name="homeSquareFootage"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter total square footage"
+    />
+  </label>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              Square footage of home office:
-            </span>
-            <input
-              type="text"
-              name="homeOfficeSquareFootage"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
-        </div>
+  <label className="block">
+    <span className="text-l text-accent">Square footage of home office:</span>
+    <input
+      type="text"
+      name="homeOfficeSquareFootage"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter office square footage"
+    />
+  </label>
+</div>
 
-        {/* -------------------------------------- */}
+
         {/* Section 9: Childcare and Dependent Care */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">
-            Section 9: Childcare and Dependent Care
-          </h2>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 9: Childcare and Dependent Care</h2>
 
-          <h3 className="text-l text-accent">
-            Did you pay for childcare or dependent care?
-          </h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="childcareYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="childcareNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Paid for Childcare or Dependent Care */}
+  <h3 className="text-l text-accent">Did you pay for childcare or dependent care?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="paidChildcare"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="paidChildcare"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">Total paid:</span>
-            <input
-              type="text"
-              name="childcareTotalPaid"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Total Paid */}
+  <label className="block">
+    <span className="text-l text-accent">Total paid:</span>
+    <input
+      type="text"
+      name="childcareTotalPaid"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter total amount paid"
+    />
+  </label>
 
-          <label className="block">
-            <span className="text-l text-accent">Name of care provider:</span>
-            <input
-              type="text"
-              name="careProviderName"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  {/* Care Provider Name */}
+  <label className="block">
+    <span className="text-l text-accent">Name of care provider:</span>
+    <input
+      type="text"
+      name="careProviderName"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter care provider's name"
+    />
+  </label>
 
-          <label className="block">
-            <span className="text-l text-accent">
-              Provider's EIN or SSN (if available):
-            </span>
-            <input
-              type="text"
-              name="careProviderEIN"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
-        </div>
+  {/* Provider's EIN or SSN */}
+  <label className="block">
+    <span className="text-l text-accent">Provider's EIN or SSN (if available):</span>
+    <input
+      type="text"
+      name="careProviderEIN"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter EIN or SSN"
+    />
+  </label>
+</div>
 
-        {/* -------------------------------------- */}
+
         {/* Section 10: Miscellaneous */}
-        {/* -------------------------------------- */}
-        <div className="space-y-6">
-          <h2 className="text-xl text-accent font-semibold">Section 10: Miscellaneous</h2>
+<div className="space-y-6">
+  <h2 className="text-xl text-accent font-semibold">Section 10: Miscellaneous</h2>
 
-          <h3 className="text-l text-accent">Did you make student loan payments?</h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="loanYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="loanNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Student Loan Payments */}
+  <h3 className="text-l text-accent">Did you make student loan payments?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="studentLoanPayments"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="studentLoanPayments"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">Total interest paid:</span>
-            <input
-              type="text"
-              name="studentLoanInterestPaid"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  <label className="block">
+    <span className="text-l text-accent">Total interest paid:</span>
+    <input
+      type="text"
+      name="studentLoanInterestPaid"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter total interest paid"
+    />
+  </label>
 
-          <h3 className="text-l text-accent">
-            Did you experience a loss due to theft, disaster, or other casualty?
-          </h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="lossYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="lossNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Loss Due to Theft, Disaster, or Other Casualty */}
+  <h3 className="text-l text-accent">Did you experience a loss due to theft, disaster, or other casualty?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="casualtyLoss"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="casualtyLoss"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">If yes, describe:</span>
-            <input
-              type="text"
-              name="lossDescription"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  <label className="block">
+    <span className="text-l text-accent">If yes, describe:</span>
+    <input
+      type="text"
+      name="lossDescription"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Describe loss"
+    />
+  </label>
 
-          <h3 className="text-l text-accent">
-            Did you contribute to any tax-advantaged accounts (FSA, etc.)?
-          </h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="taxAdvantagedYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="taxAdvantagedNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Tax-Advantaged Accounts */}
+  <h3 className="text-l text-accent">
+    Did you contribute to any tax-advantaged accounts (e.g., FSA, dependent care account)?
+  </h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="taxAdvantagedAccounts"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="taxAdvantagedAccounts"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">If yes, provide details:</span>
-            <input
-              type="text"
-              name="taxAdvantagedDetails"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
+  <label className="block">
+    <span className="text-l text-accent">If yes, provide details:</span>
+    <input
+      type="text"
+      name="taxAdvantagedDetails"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Enter details"
+    />
+  </label>
 
-          <h3 className="text-l text-accent">Were there any major life changes this year?</h3>
-          <div className="flex items-center space-x-2">
-            <label className="flex items-center space-x-2">
-              <Checkbox name="lifeChangesYes" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <Checkbox name="lifeChangesNo" />
-              <span>No</span>
-            </label>
-          </div>
+  {/* Major Life Changes */}
+  <h3 className="text-l text-accent">Were there any major life changes this year?</h3>
+  <div className="flex items-center space-x-4">
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="majorLifeChanges"
+        value="Yes"
+        className="accent-[#022c5e]"
+      />
+      <span>Yes</span>
+    </label>
+    <label className="flex items-center space-x-2">
+      <input
+        type="radio"
+        name="majorLifeChanges"
+        value="No"
+        className="accent-[#022c5e]"
+      />
+      <span>No</span>
+    </label>
+  </div>
 
-          <label className="block">
-            <span className="text-l text-accent">If yes, describe:</span>
-            <input
-              type="text"
-              name="lifeChangesDescription"
-              className="w-full p-3 mt-2 border rounded-md"
-            />
-          </label>
-        </div>
+  <label className="block">
+    <span className="text-l text-accent">If yes, describe:</span>
+    <input
+      type="text"
+      name="lifeChangesDescription"
+      className="w-full p-3 mt-2 border rounded-md"
+      placeholder="Describe life changes"
+    />
+  </label>
+</div>
 
         {/* -------------------------------------- */}
         {/* Submit Button & Status Message */}

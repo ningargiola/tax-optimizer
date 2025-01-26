@@ -13,7 +13,7 @@ export default function Header() {
 
 
        {/* TAXAIMIZER Centered Text */}
-       <h1 className="title">TAXAIMIZER</h1>
+       <h1 className="title">TAX<span style={{ fontWeight: "bold", fontStyle: "italic" }}>AI</span>MIZER</h1>
 
 
        {/* Right-Side Placeholder */}
